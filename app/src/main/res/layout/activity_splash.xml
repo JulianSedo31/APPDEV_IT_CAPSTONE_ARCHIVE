@@ -1,0 +1,29 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#1976D2"
+    android:gravity="center">
+
+    <TextView
+        android:id="@+id/tvSplashTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="BukSu IT Capstone Archive"
+        android:textSize="24sp"
+        android:textColor="#FFFFFF"
+        android:textStyle="bold"
+        android:layout_centerInParent="true"
+        android:layout_margin="16dp" />
+
+    <TextView
+        android:id="@+id/tvSplashSubtitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Loading..."
+        android:textColor="#BBDEFB"
+        android:textSize="16sp"
+        android:layout_below="@id/tvSplashTitle"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="12dp" />
+
+</RelativeLayout>
