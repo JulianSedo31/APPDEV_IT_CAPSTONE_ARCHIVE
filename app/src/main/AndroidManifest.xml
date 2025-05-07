@@ -3,6 +3,8 @@
     package="com.example.appdev_buksu_it_capstone_archives"
     xmlns:tools="http://schemas.android.com/tools">
 
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
@@ -14,9 +16,11 @@
         android:theme="@style/Theme.AppDev_BUKSU_IT_CAPSTONE_ARCHIVES"
         tools:targetApi="31">
 
-        <!-- Splash screen (Launcher) -->
-        <activity android:name=".SplashActivity"
-            android:exported="true">
+        <!-- Intro screen (Launcher) -->
+        <activity 
+            android:name=".IntroActivity"
+            android:exported="true"
+            android:theme="@style/Theme.AppDev_BUKSU_IT_CAPSTONE_ARCHIVES.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
@@ -24,13 +28,22 @@
         </activity>
 
         <!-- Login screen -->
-        <activity android:name=".LoginActivity" android:exported="true" />
+        <activity 
+            android:name=".LoginActivity" 
+            android:exported="true"
+            android:theme="@style/Theme.AppDev_BUKSU_IT_CAPSTONE_ARCHIVES.NoActionBar" />
 
         <!-- Main dashboard -->
-        <activity android:name=".MainActivity" android:exported="true" />
+        <activity 
+            android:name=".MainActivity" 
+            android:exported="true"
+            android:theme="@style/Theme.AppDev_BUKSU_IT_CAPSTONE_ARCHIVES.NoActionBar" />
 
         <!-- Capstone detail screen -->
-        <activity android:name=".CapstoneDetailActivity" android:exported="true" />
+        <activity 
+            android:name=".CapstoneDetailActivity" 
+            android:exported="true"
+            android:theme="@style/Theme.AppDev_BUKSU_IT_CAPSTONE_ARCHIVES.NoActionBar" />
 
     </application>
 
