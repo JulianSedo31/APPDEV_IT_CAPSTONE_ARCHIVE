@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">IT_Capstone_Archive</string>
+    <string-array name="filter_options">
+        <item>All</item>
+        <item>Approved</item>
+        <item>Pending</item>
+        <item>Rejected</item>
+    </string-array>
 </resources>

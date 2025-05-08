@@ -144,7 +144,7 @@
                     android:layout_marginBottom="8dp"/>
 
                 <Button
-                    android:id="@+id/btnReviewCapstone"
+                    android:id="@+id/btn_review_capstone"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="Review Capstone"
@@ -153,10 +153,10 @@
                     android:layout_marginBottom="8dp"/>
 
                 <Button
-                    android:id="@+id/btnViewStudents"
+                    android:id="@+id/btn_student_records"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="View Students"
+                    android:text="Student Records"
                     android:textColor="@color/white"
                     android:background="@color/primary"/>
             </LinearLayout>

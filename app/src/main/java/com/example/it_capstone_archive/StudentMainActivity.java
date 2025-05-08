@@ -7,7 +7,6 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
-import android.widget.TextView;
 import android.widget.Toast;
 import android.widget.ArrayAdapter;
 import android.widget.AdapterView;
@@ -52,8 +51,11 @@ public class StudentMainActivity extends AppCompatActivity {
         setupSearchAndFilter();
 
         // Populate filter spinner
-        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this,
-                R.array.filter_options, android.R.layout.simple_spinner_item);
+        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(
+                this,
+                R.array.filter_options,
+                android.R.layout.simple_spinner_item
+        );
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         filterSpinner.setAdapter(adapter);
 
@@ -148,4 +150,7 @@ public class StudentMainActivity extends AppCompatActivity {
             }
         }
     }
-} 
+
+    public static class StudentRecordsActivity {
+    }
+}
