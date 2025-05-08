@@ -31,6 +31,9 @@
         <activity android:name=".ReviewCapstoneActivity"/>
         <activity android:name=".StudentRecordsActivity"/>
         <activity android:name=".TeacherProfileActivity"/>
+        <activity android:name=".StudentDashboardActivity" />
+        <activity android:name=".SubmitCapstoneActivity" />
+        <activity android:name=".AdminStudentRecordsActivity" />
     </application>
 
 </manifest>
