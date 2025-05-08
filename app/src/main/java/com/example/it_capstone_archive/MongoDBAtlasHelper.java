@@ -11,8 +11,8 @@ import org.bson.Document;
 
 public class MongoDBAtlasHelper {
     private static final String TAG = "MongoDBAtlasHelper";
-    private static final String MONGODB_URI = "mongodb+srv://<username>:<password>@cluster0.9qyv7.mongodb.net/<dbname>?retryWrites=true&w=majority";
-    private static final String DATABASE_NAME = "your_database_name";
+    private static final String MONGODB_URI = "mongodb+srv://2201104172:12345@cluster0.9qyv7.mongodb.net/auth-db?retryWrites=true&w=majority&appName=Cluster0";
+    private static final String DATABASE_NAME = "auth-db";
     private static MongoClient mongoClient;
     private static MongoDatabase mongoDatabase;
 
