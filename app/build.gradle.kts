@@ -50,6 +50,6 @@ dependencies {
 
     implementation("com.google.android.gms:play-services-auth:21.3.0")
 
-    implementation 'org.mongodb:mongodb-driver-sync:4.10.2'
+    implementation("org.mongodb:mongodb-driver-sync:4.10.2")
 
 }

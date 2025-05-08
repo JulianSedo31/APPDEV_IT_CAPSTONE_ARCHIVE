@@ -2,7 +2,6 @@ package com.example.it_capstone_archive;
 
 import android.content.Context;
 import android.util.Log;
-import com.mongodb.MongoClientURI;
 import com.mongodb.client.MongoClient;
 import com.mongodb.client.MongoClients;
 import com.mongodb.client.MongoCollection;
@@ -19,8 +18,7 @@ public class MongoDBAtlasHelper {
     // Initialize MongoDB connection
     public static void init(Context context) {
         try {
-            MongoClientURI uri = new MongoClientURI(MONGODB_URI);
-            mongoClient = MongoClients.create(uri.toString());
+            mongoClient = MongoClients.create(MONGODB_URI);
             mongoDatabase = mongoClient.getDatabase(DATABASE_NAME);
             Log.d(TAG, "Connected to MongoDB Atlas");
         } catch (Exception e) {
