@@ -2,10 +2,13 @@ package com.example.it_capstone_archive;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
+import com.mongodb.client.MongoCollection;
+import org.bson.Document;
 
 public class StudentDashboardActivity extends AppCompatActivity {
 
@@ -37,5 +40,19 @@ public class StudentDashboardActivity extends AppCompatActivity {
             Intent intent = new Intent(StudentDashboardActivity.this, SubmitCapstoneActivity.class);
             startActivity(intent);
         });
+
+        // Example usage of MongoDB
+        MongoCollection<Document> studentsCollection = MongoDBAtlasHelper.getCollection("students");
+
+        // Insert a document
+        Document studentDoc = new Document("name", "John Doe")
+                .append("email", "john.doe@student.buksu.edu.ph")
+                .append("role", "student");
+        studentsCollection.insertOne(studentDoc);
+
+        // Query documents
+        for (Document doc : studentsCollection.find()) {
+            Log.d("MongoDB", "Student: " + doc.toJson());
+        }
     }
 }
