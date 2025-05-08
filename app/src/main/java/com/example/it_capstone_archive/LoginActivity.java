@@ -138,8 +138,12 @@ public class LoginActivity extends AppCompatActivity {
     }
 
     private void navigateToMainActivity(User user) {
-        Intent intent = new Intent(this, MainActivity.class);
-        intent.putExtra("USER_TYPE", user.getUserType());
+        Intent intent;
+        if ("TEACHER".equals(user.getUserType())) {
+            intent = new Intent(this, TeacherDashboardActivity.class);
+        } else {
+            intent = new Intent(this, StudentMainActivity.class);
+        }
         startActivity(intent);
         finish();
     }

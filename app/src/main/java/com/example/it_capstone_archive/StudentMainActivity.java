@@ -126,7 +126,9 @@ public class StudentMainActivity extends AppCompatActivity {
 
         @Override
         public CapstoneViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-            // Implementation of onCreateViewHolder method
+            View itemView = LayoutInflater.from(parent.getContext())
+                    .inflate(R.layout.item_capstone, parent, false);
+            return new CapstoneViewHolder(itemView);
         }
 
         @Override
@@ -140,7 +142,10 @@ public class StudentMainActivity extends AppCompatActivity {
         }
 
         class CapstoneViewHolder extends RecyclerView.ViewHolder {
-            // Implementation of CapstoneViewHolder class
+            public CapstoneViewHolder(View itemView) {
+                super(itemView);
+                // Initialize your view components here
+            }
         }
     }
 } 

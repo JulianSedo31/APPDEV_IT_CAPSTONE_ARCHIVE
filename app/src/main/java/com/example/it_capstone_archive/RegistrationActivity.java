@@ -55,35 +55,24 @@ public class RegistrationActivity extends AppCompatActivity {
         }
 
         showLoading(true);
-        authUtils.mAuth.createUserWithEmailAndPassword(email, password)
-                .addOnCompleteListener(this, task -> {
-                    if (task.isSuccessful()) {
-                        String userId = authUtils.mAuth.getCurrentUser().getUid();
-                        User user = new User(userId, email, fullName, "STUDENT", department);
-                        user.setStudentId(studentId);
-                        authUtils.registerNewUser(user, new AuthUtils.OnAuthCompleteListener() {
-                            @Override
-                            public void onAuthSuccess(User user) {
-                                showLoading(false);
-                                navigateToMainActivity(user);
-                            }
+        authUtils.createUserWithEmailAndPassword(email, password, new AuthUtils.OnAuthCompleteListener() {
+            @Override
+            public void onAuthSuccess(User user) {
+                showLoading(false);
+                navigateToMainActivity(user);
+            }
 
-                            @Override
-                            public void onAuthError(String error) {
-                                showLoading(false);
-                                Toast.makeText(RegistrationActivity.this, error, Toast.LENGTH_SHORT).show();
-                            }
+            @Override
+            public void onAuthError(String error) {
+                showLoading(false);
+                Toast.makeText(RegistrationActivity.this, error, Toast.LENGTH_SHORT).show();
+            }
 
-                            @Override
-                            public void onNewUser() {
-                                // Not applicable here
-                            }
-                        });
-                    } else {
-                        showLoading(false);
-                        Toast.makeText(RegistrationActivity.this, "Registration failed: " + task.getException().getMessage(), Toast.LENGTH_SHORT).show();
-                    }
-                });
+            @Override
+            public void onNewUser() {
+                // Not applicable here
+            }
+        });
     }
 
     private void handleGoogleSignIn() {
@@ -119,8 +108,12 @@ public class RegistrationActivity extends AppCompatActivity {
     }
 
     private void navigateToMainActivity(User user) {
-        Intent intent = new Intent(this, MainActivity.class);
-        intent.putExtra("USER_TYPE", user.getUserType());
+        Intent intent;
+        if ("TEACHER".equals(user.getUserType())) {
+            intent = new Intent(this, TeacherDashboardActivity.class);
+        } else {
+            intent = new Intent(this, StudentMainActivity.class);
+        }
         startActivity(intent);
         finish();
     }

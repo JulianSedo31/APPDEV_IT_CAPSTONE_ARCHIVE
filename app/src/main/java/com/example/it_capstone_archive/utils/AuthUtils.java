@@ -14,6 +14,7 @@ import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
 import com.google.android.gms.common.api.ApiException;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
+import com.google.firebase.FirebaseApp;
 import com.google.firebase.auth.AuthCredential;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
@@ -112,6 +113,25 @@ public class AuthUtils {
     public void signOut() {
         mAuth.signOut();
         mGoogleSignInClient.signOut();
+    }
+
+    public void createUserWithEmailAndPassword(String email, String password, OnAuthCompleteListener listener) {
+        mAuth.createUserWithEmailAndPassword(email, password)
+            .addOnCompleteListener(activity, task -> {
+                if (task.isSuccessful()) {
+                    FirebaseUser user = mAuth.getCurrentUser();
+                    if (user != null) {
+                        listener.onAuthSuccess(new User(user.getUid(), email, "", "STUDENT", ""));
+                    }
+                } else {
+                    listener.onAuthError(task.getException().getMessage());
+                }
+            });
+    }
+
+    public String getCurrentUserId() {
+        FirebaseUser user = mAuth.getCurrentUser();
+        return user != null ? user.getUid() : null;
     }
 
     public interface OnAuthCompleteListener {
