@@ -28,8 +28,8 @@ public class TeacherDashboardActivity extends AppCompatActivity implements Navig
         drawerLayout = findViewById(R.id.drawer_layout);
         navigationView = findViewById(R.id.nav_view);
         welcomeText = findViewById(R.id.welcome_text);
-        btnReviewCapstone = findViewById(R.id.btn_review_capstone);
-        btnStudentRecords = findViewById(R.id.btn_student_records);
+        btnReviewCapstone = findViewById(R.id.btnReviewCapstone);
+        btnStudentRecords = findViewById(R.id.btnViewStudents);
         btnSubmitCapstone = findViewById(R.id.btn_submit_capstone);
 
         // Set up navigation drawer

@@ -50,6 +50,13 @@ dependencies {
 
     implementation("com.google.android.gms:play-services-auth:21.3.0")
 
-    implementation("org.mongodb:mongodb-driver-sync:4.10.2")
+    implementation("org.mongodb:mongodb-driver-core:4.9.1")
+    implementation("org.mongodb:mongodb-driver-sync:4.9.1")
+    implementation("org.mongodb:bson:4.9.1")
+
+    implementation("org.mongodb:mongodb-driver-reactivestreams:4.9.1")
+
+    implementation ("androidx.drawerlayout:drawerlayout:1.2.0")
+    implementation ("com.google.android.material:material:1.9.0")
 
 }

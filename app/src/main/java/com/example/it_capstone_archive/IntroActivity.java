@@ -24,12 +24,14 @@ public class IntroActivity extends AppCompatActivity {
     }
 
     private void navigateToRegistration() {
-        Intent intent = new Intent(this, RegistrationActivity.class);
+        Intent intent = new Intent(IntroActivity.this,
+                com.example.it_capstone_archive.RegistrationActivity.class);
         startActivity(intent);
     }
 
     private void navigateToLogin() {
-        Intent intent = new Intent(this, LoginActivity.class);
+        Intent intent = new Intent(IntroActivity.this,
+                com.example.it_capstone_archive.LoginActivity.class);
         startActivity(intent);
     }
 } 
