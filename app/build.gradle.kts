@@ -33,7 +33,7 @@ android {
 }
 
 dependencies {
-
+    // Core Android libraries
     implementation(libs.appcompat)
     implementation(libs.material)
     implementation(libs.activity)
@@ -42,21 +42,22 @@ dependencies {
     androidTestImplementation(libs.ext.junit)
     androidTestImplementation(libs.espresso.core)
 
+    // Firebase
     implementation(platform("com.google.firebase:firebase-bom:33.13.0"))
     implementation("com.google.firebase:firebase-analytics")
     implementation("com.google.firebase:firebase-auth")
     implementation("com.google.firebase:firebase-firestore")
     implementation("com.google.firebase:firebase-storage")
 
+    // Google Play Services
     implementation("com.google.android.gms:play-services-auth:21.3.0")
 
-    implementation("org.mongodb:mongodb-driver-core:4.9.1")
-    implementation("org.mongodb:mongodb-driver-sync:4.9.1")
+    // MongoDB (ensure versions are compatible)
+    implementation("org.mongodb:mongodb-driver-sync:4.9.1") {
+        exclude(group = "org.mongodb", module = "bson")
+    }
     implementation("org.mongodb:bson:4.9.1")
 
-    implementation("org.mongodb:mongodb-driver-reactivestreams:4.9.1")
-
-    implementation ("androidx.drawerlayout:drawerlayout:1.2.0")
-    implementation ("com.google.android.material:material:1.9.0")
-
+    // DrawerLayout is already included in 'material'
+    // implementation("androidx.drawerlayout:drawerlayout:1.2.0")
 }
