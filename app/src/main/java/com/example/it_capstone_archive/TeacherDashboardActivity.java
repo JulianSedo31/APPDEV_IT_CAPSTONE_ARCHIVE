@@ -17,7 +17,7 @@ public class TeacherDashboardActivity extends AppCompatActivity implements Navig
     private DrawerLayout drawerLayout;
     private NavigationView navigationView;
     private TextView welcomeText;
-    private Button btnReviewCapstone, btnStudentRecords, btnSubmitCapstone;
+    private Button btnReviewCapstone, btnStudentRecords;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,10 +27,9 @@ public class TeacherDashboardActivity extends AppCompatActivity implements Navig
         // Initialize views
         drawerLayout = findViewById(R.id.drawer_layout);
         navigationView = findViewById(R.id.nav_view);
-        welcomeText = findViewById(R.id.welcome_text);
-        btnReviewCapstone = findViewById(R.id.btnReviewCapstone);
-        btnStudentRecords = findViewById(R.id.btnViewStudents);
-        btnSubmitCapstone = findViewById(R.id.btn_submit_capstone);
+        welcomeText = findViewById(R.id.teacherName);
+        btnReviewCapstone = findViewById(R.id.btn_review_capstone);
+        btnStudentRecords = findViewById(R.id.btn_student_records);
 
         // Set up navigation drawer
         navigationView.setNavigationItemSelectedListener(this);
@@ -47,11 +46,6 @@ public class TeacherDashboardActivity extends AppCompatActivity implements Navig
 
         btnStudentRecords.setOnClickListener(v -> {
             Intent intent = new Intent(TeacherDashboardActivity.this, AdminStudentRecordsActivity.class);
-            startActivity(intent);
-        });
-
-        btnSubmitCapstone.setOnClickListener(v -> {
-            Intent intent = new Intent(TeacherDashboardActivity.this, SubmitCapstoneActivity.class);
             startActivity(intent);
         });
     }
